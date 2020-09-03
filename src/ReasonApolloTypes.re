@@ -22,12 +22,10 @@ type apolloCache;
 
 type networkError = {statusCode: int};
 
-type apolloErrorExtensions = {code: Js.Nullable.t(string)};
-
 type graphqlError = {
   message: string,
   name: Js.Nullable.t(string),
-  extensions: Js.Nullable.t(apolloErrorExtensions),
+  extensions: Js.Nullable.t(Js.Json.t),
   locations: Js.Nullable.t(array(string)),
   path: Js.Nullable.t(array(string)),
   nodes: Js.Nullable.t(array(string)),
